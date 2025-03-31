@@ -6,7 +6,7 @@
  * MIT Licensed
  *
  * thanks to Douglas ..etc
- * 2022- edited Loilo Inc.
+ * Copyright(c) 2022- Loilo Inc.
  */
 
 import type express from "express";
