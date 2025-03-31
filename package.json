@@ -2,6 +2,9 @@
   "name": "@loilo-inc/csurf",
   "description": "CSRF token middleware",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
