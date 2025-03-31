@@ -81,7 +81,7 @@ export default function csurf(options?: CsrfOptions): express.RequestHandler {
   return function csrf(
     req: express.Request,
     res: express.Response,
-    next: express.NextFunction
+    next: express.NextFunction,
   ) {
     // validate the configuration against request
     if (!verifyConfiguration(req, sessionKey, cookie)) {
@@ -126,7 +126,7 @@ export default function csurf(options?: CsrfOptions): express.RequestHandler {
       return next(
         createError(403, "invalid csrf token", {
           code: "EBADCSRFTOKEN",
-        })
+        }),
       );
     }
 
@@ -263,7 +263,7 @@ function setCookie(
   res: express.Response,
   name: string,
   val: string,
-  options: any
+  options: any,
 ) {
   const data = Cookie.serialize(name, val, options);
 
@@ -289,7 +289,7 @@ function setSecret(
   res: express.Response,
   sessionKey: string,
   val: string,
-  cookie: any
+  cookie: any,
 ) {
   if (cookie) {
     // set secret on cookie
@@ -315,7 +315,7 @@ function setSecret(
 function verifyConfiguration(
   req: express.Request,
   sessionKey: string,
-  cookie: any
+  cookie: any,
 ) {
   if (!getSecretBag(req, sessionKey, cookie)) {
     return false;

@@ -36,7 +36,7 @@ function createTestServer(options?: CsrfOptions) {
   app.use(function (
     req: express.Request,
     res: express.Response,
-    next: express.NextFunction
+    next: express.NextFunction,
   ) {
     const index = req.url.indexOf("?") + 1;
     if (index) {
@@ -154,7 +154,7 @@ describe("csurf", function () {
     app.use(function (
       req: express.Request,
       res: express.Response,
-      next: express.NextFunction
+      next: express.NextFunction,
     ) {
       res.end(req.csrfToken() || "none");
     });
@@ -163,7 +163,7 @@ describe("csurf", function () {
       err: Error,
       req: express.Request,
       res: express.Response,
-      next: express.NextFunction
+      next: express.NextFunction,
     ) {
       // @ts-ignore
       if (err.code !== "EBADCSRFTOKEN") return next(err);
@@ -212,7 +212,7 @@ describe("csurf", function () {
         app.use(function (
           req: express.Request,
           res: express.Response,
-          next: express.NextFunction
+          next: express.NextFunction,
         ) {
           res.setHeader("Set-Cookie", "foo=bar");
           next();
@@ -339,7 +339,7 @@ describe("csurf", function () {
       app.use(function (
         req: express.Request,
         res: express.Response,
-        next: express.NextFunction
+        next: express.NextFunction,
       ) {
         // @ts-ignore
         req.mySession = sess;
@@ -350,7 +350,7 @@ describe("csurf", function () {
       app.use(function (
         req: express.Request,
         res: express.Response,
-        next: express.NextFunction
+        next: express.NextFunction,
       ) {
         res.end(req.csrfToken() || "none");
       });
