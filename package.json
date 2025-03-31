@@ -1,17 +1,28 @@
 {
-  "name": "csurf",
+  "name": "@loilo-inc/csurf",
   "description": "CSRF token middleware",
   "version": "1.11.0",
-  "author": "Jonathan Ong <me@jongleberry.com> (http://jongleberry.com)",
-  "contributors": [
-    "Douglas Christopher Wilson <doug@somethingdoug.com>"
-  ],
   "license": "MIT",
-  "repository": "expressjs/csurf",
-  "keywords": [
-    "csrf",
-    "tokens",
-    "middleware",
-    "express"
-  ]
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "cookie": "^1.0.2",
+    "cookie-signature": "^1.2.2",
+    "csrf": "^3.1.0",
+    "http-errors": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.8",
+    "@types/cookie-signature": "^1.1.2",
+    "@types/express": "^5.0.1",
+    "@types/http-errors": "^2.0.4",
+    "cookie-parser": "^1.4.7",
+    "cookie-session": "^2.1.0",
+    "supertest": "^7.1.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
+  }
 }
