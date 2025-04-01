@@ -14,6 +14,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - run: npm i
+      - run: npm run build
       - run: node tools/release.mjs
         env:
           GITHUB_TOKEN: ${{ github.token }}
