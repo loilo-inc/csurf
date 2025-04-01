@@ -5,8 +5,8 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/csurf.js",
+  "types": "dist/csurf.d.ts",
   "type": "module",
   "scripts": {
     "build": "tsc",
