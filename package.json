@@ -7,7 +7,6 @@
   },
   "main": "dist/csurf.js",
   "types": "dist/csurf.d.ts",
-  "type": "module",
   "scripts": {
     "build": "tsc",
     "test": "vitest --run",
