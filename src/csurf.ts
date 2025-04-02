@@ -11,7 +11,7 @@
 
 import type express from "express";
 import Tokens from "csrf";
-import Cookie from "cookie";
+import * as Cookie from "cookie";
 import createError from "http-errors";
 import { sign } from "cookie-signature";
 
