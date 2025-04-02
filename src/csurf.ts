@@ -50,7 +50,7 @@ export type CsrfOptions = {
  * @public
  */
 
-export default function csurf(options?: CsrfOptions): express.RequestHandler {
+function csurf(options?: CsrfOptions): express.RequestHandler {
   const opts = options || {};
 
   // get cookie options
@@ -327,3 +327,6 @@ function verifyConfiguration(
 
   return true;
 }
+
+export default csurf;
+module.exports = csurf;
