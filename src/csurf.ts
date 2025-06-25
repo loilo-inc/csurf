@@ -328,5 +328,4 @@ function verifyConfiguration(
   return true;
 }
 
-exports.default = csurf;
 module.exports = csurf;
