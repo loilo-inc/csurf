@@ -3,7 +3,7 @@ import cookieParser from "cookie-parser";
 import express from "express";
 import request from "supertest";
 import type { CsrfOptions } from "./csurf";
-import csurf from "./csurf";
+import { csurf } from "./csurf";
 import session from "cookie-session";
 
 function cookie(res: Express.Response, name: string) {
