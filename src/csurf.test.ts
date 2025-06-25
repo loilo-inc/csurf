@@ -5,7 +5,6 @@ import request from "supertest";
 import type { CsrfOptions } from "./csurf";
 import csurf from "./csurf";
 import session from "cookie-session";
-import querystring from "node:querystring";
 
 function cookie(res: Express.Response, name: string) {
   // @ts-ignore
@@ -33,17 +32,6 @@ function createTestServer(options?: CsrfOptions) {
   } else if (options && options.cookie) {
     app.use(cookieParser("keyboard cat"));
   }
-  app.use(function (
-    req: express.Request,
-    res: express.Response,
-    next: express.NextFunction,
-  ) {
-    const index = req.url.indexOf("?") + 1;
-    if (index) {
-      req.query = querystring.parse(req.url.substring(index));
-    }
-    next();
-  });
   app.use(express.urlencoded({ extended: false }));
   app.use(csurf(options));
   app.get("/", function (req, res) {
@@ -82,7 +70,9 @@ describe("csurf", function () {
     await request(app)
       .post("/?_csrf=" + encodeURIComponent(token))
       .set("Cookie", cookies(res))
-      .expect(200);
+      .expect((res) => {
+        expect(res.text).toBe("{}");
+      });
   });
 
   it("should work in csrf-token header", async function () {

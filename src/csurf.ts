@@ -329,4 +329,4 @@ function verifyConfiguration(
 }
 
 export default csurf;
-module.exports = csurf;
+exports = csurf;
