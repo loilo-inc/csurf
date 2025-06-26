@@ -327,5 +327,3 @@ function verifyConfiguration(
 
   return true;
 }
-
-export default csurf;
