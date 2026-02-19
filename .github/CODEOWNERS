@@ -1,0 +1,4 @@
+# Code Owners for @loilo-inc/csurf
+
+# Package.json should be reviewed by the OSS maintainer team
+/package.json @loilo-inc/oss-maintainer-js
