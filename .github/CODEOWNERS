@@ -2,3 +2,5 @@
 
 # Package.json should be reviewed by the OSS maintainer team
 /package.json @loilo-inc/oss-maintainer-js
+/package-lock.json @loilo-inc/oss-maintainer-js
+/.github/workflows @loilo-inc/oss-maintainer-js
