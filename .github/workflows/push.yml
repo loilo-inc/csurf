@@ -13,5 +13,5 @@ jobs:
           node-version: "24"
       - run: npm install
       - run: npm run fmtcheck
-      - run: npx tsc --noEmit
+      - run: npm run typecheck
       - run: npm test

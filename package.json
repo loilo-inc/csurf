@@ -15,7 +15,8 @@
     "build": "tsc",
     "test": "vitest --run",
     "fmt": "prettier --write src",
-    "fmtcheck": "prettier --check src"
+    "fmtcheck": "prettier --check src",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "cookie": "^1.1.1",
